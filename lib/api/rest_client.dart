@@ -39,6 +39,12 @@ abstract class RestClient {
       }
     }
 
+    if (options.headers['X-Application'] == null) {
+      options.headers['X-Application'] = di<ServiceRestClient>()
+          .getAppConfig()
+          .publicApiKey;
+    }
+
     if (!options.extra.containsKey('not_json')) {
       options.headers['Content-Type'] = 'application/json';
     }
