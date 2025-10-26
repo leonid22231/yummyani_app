@@ -1,0 +1,3 @@
+class ServiceRestClient {
+  void init() {}
+}
